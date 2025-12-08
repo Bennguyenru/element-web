@@ -110,6 +110,15 @@ const getSecondaryButtonLabel = (state: DeviceStateForToast): string => {
     }
 };
 
+const getTertiaryButtonLabel = (state: DeviceState): string | undefined => {
+    switch (state) {
+        case DeviceStateForToast.KEY_STORAGE_OUT_OF_SYNC:
+            return _t("action|dismiss");
+        default:
+            return undefined;
+    }
+};
+
 const getDescription = (state: DeviceStateForToast): string => {
     switch (state) {
         case "set_up_recovery":
@@ -271,6 +280,10 @@ export const showToast = (state: DeviceStateForToast): void => {
         }
     };
 
+    const onTertiaryClick = async (): Promise<void> => {
+        DeviceListener.sharedInstance().dismissEncryptionSetup();
+    };
+
     /**
      * We tried to accessSecretStorage, which triggered us to ask for the
      * recovery key, but this failed. If the user just gave up, that is fine,
@@ -310,6 +323,8 @@ export const showToast = (state: DeviceStateForToast): void => {
             onPrimaryClick,
             secondaryLabel: getSecondaryButtonLabel(state),
             onSecondaryClick,
+            tertiaryLabel: getTertiaryButtonLabel(state),
+            onTertiaryClick,
             overrideWidth: state === "key_storage_out_of_sync" ? "366px" : undefined,
         },
         component: GenericToast,
