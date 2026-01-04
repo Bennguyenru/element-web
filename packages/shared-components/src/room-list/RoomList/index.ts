@@ -5,5 +5,5 @@
  * Please see LICENSE files in the repository root for full details.
  */
 
-export type { RoomListSearchViewModel, RoomListSearchViewSnapshot } from "./RoomListSearchView";
-export { RoomListSearchView } from "./RoomListSearchView";
+export { RoomList } from "./RoomList";
+export type { RoomListProps, RoomListViewState, RoomsResult, FilterKey } from "./RoomList";

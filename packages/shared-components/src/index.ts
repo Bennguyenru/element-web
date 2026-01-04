@@ -20,6 +20,10 @@ export * from "./pill-input/PillInput";
 export * from "./rich-list/RichItem";
 export * from "./rich-list/RichList";
 export * from "./room-list/RoomListSearchView";
+export * from "./room-list/RoomListView";
+export * from "./room-list/RoomListItem";
+export * from "./room-list/RoomListPrimaryFilters";
+export * from "./room-list/RoomList";
 export * from "./utils/Box";
 export * from "./utils/Flex";
 

@@ -5,5 +5,5 @@
  * Please see LICENSE files in the repository root for full details.
  */
 
-export type { RoomListSearchViewModel, RoomListSearchViewSnapshot } from "./RoomListSearchView";
-export { RoomListSearchView } from "./RoomListSearchView";
+export { NotificationDecoration } from "./NotificationDecoration";
+export type { NotificationDecorationProps, NotificationDecorationData } from "./NotificationDecoration";
