@@ -16,22 +16,25 @@ import SettingsStore from "../../../settings/SettingsStore";
 export const enum SortOption {
     Activity = SortingAlgorithm.Recency,
     AToZ = SortingAlgorithm.Alphabetic,
+    UnreadFirst = SortingAlgorithm.Unread,
 }
 
 /**
  * {@link SortOption} holds almost the same information as
  * {@link SortingAlgorithm}. This is done intentionally to
- * prevent the view from having a dependence on the
- * model (which is the store in this case).
+ * prevent the view from having a dependency on the
+ * model (which is the room list store in this case).
  */
 const sortingAlgorithmToSortingOption = {
     [SortingAlgorithm.Alphabetic]: SortOption.AToZ,
     [SortingAlgorithm.Recency]: SortOption.Activity,
+    [SortingAlgorithm.Unread]: SortOption.UnreadFirst,
 };
 
 const sortOptionToSortingAlgorithm = {
     [SortOption.AToZ]: SortingAlgorithm.Alphabetic,
     [SortOption.Activity]: SortingAlgorithm.Recency,
+    [SortOption.UnreadFirst]: SortingAlgorithm.Unread,
 };
 
 interface SortState {
